@@ -32,8 +32,7 @@ exclude:
   - Gemfile.lock
   - node_modules
   - "*.html.bak"
-  - vendor/
-  - vendor/**
+  - vendor
 
 # Plugins (suportados pelo GitHub Pages)
 plugins:
