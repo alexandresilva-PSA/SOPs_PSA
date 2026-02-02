@@ -4,7 +4,7 @@
 # Informações do Site
 title: "Manuais PSA Elevate"
 description: "Documentação das ferramentas do sistema PSA Elevate"
-baseurl: "/Manuais_Ferramentas_PSA"  # Nome do repositório GitHub
+baseurl: "/2teste0202-psa"  # Nome do repositório GitHub
 url: ""
 
 # Build
