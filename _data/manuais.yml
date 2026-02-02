@@ -1,0 +1,31 @@
+# Metadados dos Manuais PSA
+# Este arquivo é lido pelo Jekyll para gerar a navegação
+
+manuais:
+  - id: consulta-xmls
+    titulo: "Consulta de XMLs"
+    descricao: "Pesquisa e exportação de documentos fiscais eletrônicos"
+    versao: "3.0"
+    icone: "description"
+    cor: "#14B8A6"
+
+  - id: efd-icms
+    titulo: "EFD ICMS/IPI"
+    descricao: "Consulta e análise de arquivos SPED Fiscal"
+    versao: "1.0"
+    icone: "receipt_long"
+    cor: "#0D9488"
+
+  - id: efd-contribuicoes
+    titulo: "EFD Contribuições"
+    descricao: "Consulta e exportação de escrituração PIS/COFINS"
+    versao: "2.0"
+    icone: "analytics"
+    cor: "#0F766E"
+
+  - id: difal-inteligente
+    titulo: "DIFAL Inteligente"
+    descricao: "Auditoria automatizada de diferencial de alíquotas"
+    versao: "1.0"
+    icone: "balance"
+    cor: "#84CC16"

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- PSA Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    {% seo %}
+</head>
+
+<body>
+    <!-- Admin Toolbar -->
+    {% include admin-toolbar.html %}
+
+    <!-- Header -->
+    {% include header.html %}
+
+    <!-- Layout Container -->
+    <div class="layout">
+        <!-- Sidebar -->
+        {% include sidebar.html %}
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                {{ content }}
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/editor.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/features.js' | relative_url }}"></script>
+
+    <!-- GitHub URL Configuration (customize per manual) -->
+    <script>
+        window.PSA_GITHUB_URL = '{{ page.github_url | default: site.github.repository_url | default: "https://github.com" }}';
+    </script>
+</body>
+
+</html>

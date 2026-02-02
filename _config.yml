@@ -1,0 +1,38 @@
+# Configuração Jekyll para Manuais PSA
+# GitHub Pages usa Jekyll automaticamente
+
+# Informações do Site
+title: "Manuais PSA Elevate"
+description: "Documentação das ferramentas do sistema PSA Elevate"
+baseurl: "/psa-manuais"  # Nome do repositório GitHub
+url: ""
+
+# Build
+markdown: kramdown
+highlighter: rouge
+
+# Coleções para organizar manuais
+collections:
+  manuais:
+    output: true
+    permalink: /manuais/:path/
+
+# Defaults - aplica layout automaticamente
+defaults:
+  - scope:
+      path: "manuais"
+      type: "pages"
+    values:
+      layout: "manual"
+
+# Excluir arquivos do build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - "*.html.bak"
+
+# Plugins (suportados pelo GitHub Pages)
+plugins:
+  - jekyll-seo-tag

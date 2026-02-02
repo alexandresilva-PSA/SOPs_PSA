@@ -1,0 +1,15 @@
+<!-- PSA Header Component -->
+<header class="header">
+    <div class="header-left">
+        <svg class="logo" viewBox="0 0 180 48" fill="none">
+            <path d="M8 38L20 26L32 38" stroke="#84CC16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 28L20 16L32 28" stroke="#14B8A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="44" y="34" fill="#E5E7EB" font-family="Work Sans" font-weight="700" font-size="22">PSA</text>
+        </svg>
+        <div class="header-divider"></div>
+        <span class="header-title editable-text">{{ page.title | default: site.title }}</span>
+    </div>
+    <div class="header-right">
+        <span class="badge-versao editable-text">Versão {{ page.versao | default: "1.0" }}</span>
+    </div>
+</header>

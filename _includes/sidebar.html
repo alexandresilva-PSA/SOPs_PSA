@@ -1,0 +1,55 @@
+<!-- PSA Sidebar Component -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <h2>Sumário</h2>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+        {% if page.toc %}
+        {% for section in page.toc %}
+        <div class="nav-group" id="nav-group-{{ section.id }}">
+            <div class="nav-group-header" onclick="toggleNavGroup(this)">
+                <span>{{ section.title }}</span>
+                <span class="material-icons-round">expand_more</span>
+            </div>
+            <div class="nav-group-content">
+                {% for item in section.items %}
+                <a href="#{{ item.id }}">
+                    <span class="material-icons-round">{{ item.icon | default: 'article' }}</span>
+                    {{ item.title }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <!-- Fallback: Auto-generated from headings -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleNavGroup(this)">
+                <span>Conteúdo</span>
+                <span class="material-icons-round">expand_more</span>
+            </div>
+            <div class="nav-group-content" id="auto-toc">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+        {% endif %}
+    </nav>
+</aside>
+
+<script>
+    // Auto-generate TOC if not provided in frontmatter
+    document.addEventListener('DOMContentLoaded', function () {
+        const autoToc = document.getElementById('auto-toc');
+        if (autoToc && autoToc.children.length === 0) {
+            document.querySelectorAll('.secao').forEach(function (secao) {
+                const h2 = secao.querySelector('h2');
+                if (h2 && secao.id) {
+                    const link = document.createElement('a');
+                    link.href = '#' + secao.id;
+                    link.innerHTML = '<span class="material-icons-round">article</span>' + h2.textContent;
+                    autoToc.appendChild(link);
+                }
+            });
+        }
+    });
+</script>
